@@ -1,9 +1,13 @@
 
+show tables;
+describe blood_bank;
+describe events;
+describe hospitals;
 
 create table blood_bank(
     id int primary key,
     name varchar(50),
-    phone varchar(50)
+    phone varchar(50),
     address text
 );
 
@@ -30,8 +34,7 @@ create table blood_donors (
     phone varchar(50) not null,
     address text,
     blood_group varchar(50) not null,
-    last_donated timestamp not null,
-    foreign key (hospital_id) references hospitals(id)
+    last_donated timestamp not null
 );
 
 create table blood (
@@ -60,9 +63,7 @@ create table donated_blood (
     donated_on timestamp not null,
     primary key (blood_id, donor_id),
     foreign key (donor_id) references blood_donors(id),
-    foreign key (blood_bank_id) references blood_bank(id)
+    foreign key (blood_id) references blood(id)
 );
-
-
 
 show tables;
