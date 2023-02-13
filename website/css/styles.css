@@ -27,13 +27,36 @@ p {
   font-family: "Ubuntu", sans-serif;
 }
 /*main-blood*/
-.bg-image {
-  background-image: url("../images/bloodcell.jpg");
+#main-blood {
   width: 100%;
+}
+#videoDiv {
+  width: 100%;
+  height: 360px;
+  position: relative;
+}
+#video1 {
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  z-index: -100;
+}
+#videoMessage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 /*feature*/
 #features {
-  background-color: #ff0032;
+  background-color: #fff;
 }
 .card {
   text-align: center;
