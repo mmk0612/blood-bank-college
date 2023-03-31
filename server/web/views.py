@@ -37,4 +37,9 @@ def volunteer(request):
     context = {}
     return render(request, TEMPLATE_VOLUNTEER, context)
 
+from api.forms import RequestBloodForm
+TEMPLATE_TEST = "test.html"
 
+def test(request):
+    context = {"form_html": RequestBloodForm().as_p()}
+    return render(request, TEMPLATE_TEST, context)
