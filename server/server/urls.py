@@ -26,4 +26,9 @@ urlpatterns = [
 
     path('', web_views.homepage, name='homepage'),
     path('events/', web_views.events, name='events'),
+    path('about-us/', web_views.about_us, name='about-us'),
+    path('donate-blood/', web_views.donate_blood, name='donate-blood'),
+    path('request-blood/', web_views.request_blood, name='request-blood'),
+    path('donations/', web_views.donations, name='donations'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

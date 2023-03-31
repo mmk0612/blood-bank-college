@@ -2,6 +2,10 @@ from django.shortcuts import render
 
 TEMPLATE_HOMEPAGE = "homepage.html"
 TEMPLATE_EVENTS = "events.html"
+TEMPLATE_ABOUT_US = "about_us.html"
+TEMPLATE_DONATE_BLOOD = "donate_blood.html"
+TEMPLATE_REQUEST_BLOOD = "request_blood.html"
+TEMPLATE_DONATIONS = "donations.html"
 
 # Create your views here.
 def homepage(request):
@@ -11,3 +15,21 @@ def homepage(request):
 def events(request):
     context = {}
     return render(request, TEMPLATE_EVENTS, context)
+
+def about_us(request):
+    context = {}
+    return render(request, TEMPLATE_ABOUT_US, context)
+
+def donate_blood(request):
+    context = {}
+    return render(request, TEMPLATE_DONATE_BLOOD, context)
+
+def request_blood(request):
+    context = {}
+    return render(request, TEMPLATE_REQUEST_BLOOD, context)
+
+def donations(request):
+    context = {}
+    return render(request, TEMPLATE_DONATIONS, context)
+
+
