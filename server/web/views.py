@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 TEMPLATE_HOMEPAGE = "homepage.html"
 TEMPLATE_EVENTS = "events.html"
-TEMPLATE_ABOUT_US = "about_us.html"
-TEMPLATE_DONATE_BLOOD = "donate_blood.html"
-TEMPLATE_REQUEST_BLOOD = "request_blood.html"
+TEMPLATE_ABOUT_US = "about-us.html"
+TEMPLATE_DONATE_BLOOD = "donate-blood.html"
+TEMPLATE_REQUEST_BLOOD = "request-blood.html"
 TEMPLATE_DONATIONS = "donations.html"
 
 # Create your views here.
