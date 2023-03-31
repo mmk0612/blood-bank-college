@@ -30,5 +30,6 @@ urlpatterns = [
     path('donate-blood/', web_views.donate_blood, name='donate-blood'),
     path('request-blood/', web_views.request_blood, name='request-blood'),
     path('donations/', web_views.donations, name='donations'),
+    path('volunteer/', web_views.volunteer, name='volunteer'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

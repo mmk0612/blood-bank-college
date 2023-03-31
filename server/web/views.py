@@ -6,6 +6,7 @@ TEMPLATE_ABOUT_US = "about-us.html"
 TEMPLATE_DONATE_BLOOD = "donate-blood.html"
 TEMPLATE_REQUEST_BLOOD = "request-blood.html"
 TEMPLATE_DONATIONS = "donations.html"
+TEMPLATE_VOLUNTEER = "volunteer.html"
 
 # Create your views here.
 def homepage(request):
@@ -31,5 +32,9 @@ def request_blood(request):
 def donations(request):
     context = {}
     return render(request, TEMPLATE_DONATIONS, context)
+
+def volunteer(request):
+    context = {}
+    return render(request, TEMPLATE_VOLUNTEER, context)
 
 

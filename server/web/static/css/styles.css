@@ -12,6 +12,13 @@ h6 {
 p {
   font-family: "Montserrat-light", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #feff86;
+}
 /*title section*/
 #title-main {
   background-color: #ff0032;
