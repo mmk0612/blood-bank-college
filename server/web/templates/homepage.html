@@ -1,154 +1,163 @@
-{% include 'header.html' %} {% load static %}
-<section id="main-blood">
-  <div id="videoDiv">
-    <video id="video1" preload="" autoplay="" muted="" playsinline="" loop="">
-      <source
-        src="{% static 'images/RedBloodCellsVidevo.mov' %}"
-        type="video/mp4"
-      />
-    </video>
-    <div id="videoMessage" class="styling">
-      <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">
-          <i class="fa-solid fa-droplet"></i>Request Blood
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+
+    <section id="main-blood">
+      <div id="videoDiv">
+        <video id="video1" preload="" autoplay="" muted="" playsinline="" loop="">
+          <source
+            src="{% static 'images/RedBloodCellsVidevo.mov' %}"
+            type="video/mp4"
+          />
+        </video>
+        <div id="videoMessage" class="styling">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">
+              <i class="fa-solid fa-droplet"></i>Request Blood
+            </button>
+            <button class="btn btn-primary" type="button">
+              <i class="fa-solid fa-droplet"></i>Donate Blood
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h2>DONATIONS</h2>
+              </div>
+              <div class="card-body">
+                <p><i class="fa-solid fa-indian-rupee-sign fa-4x"></i></p>
+                <p>
+                  Thank you for all your donations towards our mission and for
+                  becoming an important part of our team.
+                </p>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-danger">
+                    <a href="/donations">DONATE US</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h2>VOLUNTEER</h2>
+              </div>
+              <div class="card-body">
+                <p><i class="fa-solid fa-handshake-angle fa-4x"></i></p>
+                <p>
+                  Congratulations on becoming a vital part of the biggest blood
+                  donation group of the country.
+                </p>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-danger">
+                    <a href="/volunteer">JOIN NOW</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h2>EVENTS</h2>
+              </div>
+              <div class="card-body">
+                <p><i class="fa-regular fa-flag fa-4x"></i></p>
+                <p>
+                  We are planning our important future events for all of you. Please
+                  check all the related information to join!
+                </p>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-danger">
+                    <a href="/events">EVENTS INFO</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="articles">
+      <div
+        id="Articlescarousel"
+        class="carousel slide container-fluid"
+        data-ride="carousel"
+        data-interval="1000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2 class="article-text">Why should we donate blood?</h2>
+            <img
+              class="article-img"
+              src="{% static 'images/whydonate.jpg' %}"
+              alt="blood-importance"
+            />
+            <p>
+              Blood is the most precious gift that anyone can give to another person
+              – the gift of life. A decision to donate your blood can save a life,
+              or even several if your blood is separated into its components – red
+              cells, platelets and plasma – which can be used individually for
+              patients with specific conditions.Safe blood saves lives. Blood is
+              needed by women with complications during pregnancy and childbirth,
+              children with severe anaemia, often resulting from malaria or
+              malnutrition, accident victims and surgical and cancer patients.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="article-text">Is donating blood safe?</h2>
+            <img
+              class="article-img"
+              src="{% static 'images/safe.png' %}"
+              alt="Blood-donation-safe"
+            />
+            <p>
+              Yes. Remember that you will only be accepted as a blood donor if you
+              are fit and well. Your health and well-being are very important to the
+              blood service. The needle and blood bag used to collect blood come in
+              a sterile pack that cannot be reused, so the process is made as safe
+              as possible.
+            </p>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#Articlescarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="btn btn-primary" type="button">
-          <i class="fa-solid fa-droplet"></i>Donate Blood
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#Articlescarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
         </button>
       </div>
-    </div>
-  </div>
-</section>
-<section id="features">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card">
-          <div class="card-header">
-            <h2>DONATIONS</h2>
-          </div>
-          <div class="card-body">
-            <p><i class="fa-solid fa-indian-rupee-sign fa-4x"></i></p>
-            <p>
-              Thank you for all your donations towards our mission and for
-              becoming an important part of our team.
-            </p>
-            <div class="card-footer">
-              <button type="button" class="btn btn-danger">
-                <a href="/donations">DONATE US</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card">
-          <div class="card-header">
-            <h2>VOLUNTEER</h2>
-          </div>
-          <div class="card-body">
-            <p><i class="fa-solid fa-handshake-angle fa-4x"></i></p>
-            <p>
-              Congratulations on becoming a vital part of the biggest blood
-              donation group of the country.
-            </p>
-            <div class="card-footer">
-              <button type="button" class="btn btn-danger">
-                <a href="/volunteer">JOIN NOW</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card">
-          <div class="card-header">
-            <h2>EVENTS</h2>
-          </div>
-          <div class="card-body">
-            <p><i class="fa-regular fa-flag fa-4x"></i></p>
-            <p>
-              We are planning our important future events for all of you. Please
-              check all the related information to join!
-            </p>
-            <div class="card-footer">
-              <button type="button" class="btn btn-danger">
-                <a href="/events">EVENTS INFO</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="articles">
-  <div
-    id="Articlescarousel"
-    class="carousel slide container-fluid"
-    data-ride="carousel"
-    data-interval="1000"
-  >
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <h2 class="article-text">Why should we donate blood?</h2>
-        <img
-          class="article-img"
-          src="{% static 'images/whydonate.jpg' %}"
-          alt="blood-importance"
-        />
-        <p>
-          Blood is the most precious gift that anyone can give to another person
-          – the gift of life. A decision to donate your blood can save a life,
-          or even several if your blood is separated into its components – red
-          cells, platelets and plasma – which can be used individually for
-          patients with specific conditions.Safe blood saves lives. Blood is
-          needed by women with complications during pregnancy and childbirth,
-          children with severe anaemia, often resulting from malaria or
-          malnutrition, accident victims and surgical and cancer patients.
+    </section>
+    <footer id="footer">
+      <div class="container-fluid">
+        <p class="contact-icons">
+          <i class="c-icon fa-brands fa-facebook"></i>
+          <i class="c-icon fa-brands fa-instagram"></i>
+          <i class="c-icon fa-regular fa-envelope"></i>
         </p>
       </div>
-      <div class="carousel-item">
-        <h2 class="article-text">Is donating blood safe?</h2>
-        <img
-          class="article-img"
-          src="{% static 'images/safe.png' %}"
-          alt="Blood-donation-safe"
-        />
-        <p>
-          Yes. Remember that you will only be accepted as a blood donor if you
-          are fit and well. Your health and well-being are very important to the
-          blood service. The needle and blood bag used to collect blood come in
-          a sterile pack that cannot be reused, so the process is made as safe
-          as possible.
-        </p>
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#Articlescarousel"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#Articlescarousel"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</section>
-<footer id="footer">
-  <div class="container-fluid">
-    <p class="contact-icons">
-      <i class="c-icon fa-brands fa-facebook"></i>
-      <i class="c-icon fa-brands fa-instagram"></i>
-      <i class="c-icon fa-regular fa-envelope"></i>
-    </p>
-  </div>
-</footer>
-{% include 'footer.html' %}
+    </footer>
+
+{% endblock %}
