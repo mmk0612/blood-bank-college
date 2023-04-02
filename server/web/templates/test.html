@@ -2,6 +2,8 @@
 
 <form action="/api/test/" method="post">
 
+    {% csrf_token %}
+
 {{ form_html }}
 
 <input type="submit" value="Submit" class="" />
