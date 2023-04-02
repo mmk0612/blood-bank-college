@@ -61,6 +61,9 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+a.bl-text:hover {
+  color: #dc3535;
+}
 /*feature*/
 #features {
   background-color: #fff;
@@ -87,20 +90,34 @@ a:hover {
 /*contact-us*/
 #footer {
   text-align: center;
-  background-color: #fff;
+  background-color: #2b3467;
+  color: #fff;
+}
+.love {
+  font-size: 3rem;
 }
 .contact-icons {
   margin: 2%;
   font-size: 4rem;
 }
 .c-icon {
-  padding: 50px;
+  padding: 5px;
+  color: #fff;
+  border-radius: 20px;
+}
+.c-icon:hover {
+  color: #feff86;
 }
 /*about-us*/
 .team {
   text-align: center;
   line-height: 1.5;
   font-size: 4rem;
+}
+#ot {
+  background-color: #f9b5d0;
+  text-align: center;
+  padding: 2% 2%;
 }
 #about {
   text-align: center;
@@ -109,13 +126,13 @@ a:hover {
 }
 @keyframes color-change {
   0% {
-    background-color: #fa8072;
+    background-color: #ffa900;
   }
   50% {
-    background-color: #ed2939;
+    background-color: #ff7100;
   }
   100% {
-    background-color: #d21f3c;
+    background-color: #ffa900;
   }
 }
 #about .container-fluid {
@@ -124,5 +141,5 @@ a:hover {
 .about-img {
   width: 15%;
   height: 200px;
-  margin: 100px 0;
+  margin: 20px 0 50px;
 }
