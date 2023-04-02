@@ -1,13 +1,20 @@
-{% include 'header.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
-<form action="/api/test/" method="post">
+{% block title %}
+    Test
+{% endblock %}
 
-    {% csrf_token %}
+{% block content %}
 
-{{ form_html }}
+    <form action="/api/test/" method="post">
 
-<input type="submit" value="Submit" class="" />
+        {% csrf_token %}
 
-</form>
+    {{ form_html }}
 
-{% include 'footer.html' %}
+    <input type="submit" value="Submit" class="" />
+
+    </form>
+
+{% endblock %}
