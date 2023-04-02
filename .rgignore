@@ -1,0 +1,6 @@
+.git
+__pycache__
+*.png
+*.jpg
+*.mov
+*.jpeg

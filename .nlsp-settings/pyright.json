@@ -1,0 +1,11 @@
+{
+    "executionEnvironments" : [
+        {
+            "root" : "server",
+            "extraPaths": [
+                "server/web",
+                "server/api"
+            ]
+        }
+    ]
+}
