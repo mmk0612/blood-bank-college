@@ -1,12 +1,35 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block title %} {% endblock %}
+{%block content %}
 
-{% block title %}
-    Events
-{% endblock %}
-
-{% block content %}
-
-    about us
+<section id="events">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h2>
+              Blood Donation Event to be held in Delhi Technological University
+              in April 2023
+            </h2>
+          </div>
+          <div class="card-body">
+            <img
+              class="ev-img"
+              src="{% static '/images/dtu.webp' %}"
+              alt="dtu-img"
+              style="width: 50%; height: 250px; margin: 20px"
+            />
+            <p>
+              We welcome you all to the blood donation drive to be conducted in
+              the Delhi Technological University starting from 23rd April 2023
+              uptil 27th April 2023. For further deatils keep visiting the site:
+            </p>
+          </div>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
