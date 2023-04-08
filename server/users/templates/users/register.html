@@ -32,7 +32,10 @@
         {{ form.csrf_token }}
 
 
-        <input type="text" name="username">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control">
+        </div>
         <input type="password" name="password">
         <input type="email" name="email">
         <input type="text" name="first_name">
