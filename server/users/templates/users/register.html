@@ -8,22 +8,44 @@
 
     <h1>Register User</h1>
 
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ error|escape }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <form method="post">
         {{ form.csrf_token }}
-        {{ form.username.label }} {{ form.username }}
-        {{ form.password.label }} {{ form.password }}
-        {{ form.email.label }} {{ form.email }}
-        {{ form.first_name.label }} {{ form.first_name }}
-        {{ form.last_name.label }} {{ form.last_name }}
 
-        {{ form.age.label }} {{ form.age }}
-        {{ form.phone.label }} {{ form.phone }}
-        {{ form.blood_group.label }} {{ form.blood_group }}
-        {{ form.state.label }} {{ form.state }}
-        {{ form.pincode.label }} {{ form.pincode }}
-        {{ form.date_of_registration.label }} {{ form.date_of_registration }}
-        {{ form.weight.label }} {{ form.weight }}
-        {{ form.date_of_birth.label }} {{ form.date_of_birth }}
+
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="email" name="email">
+        <input type="text" name="first_name">
+        <input type="text" name="last_name">
+        <input type="number" name="age">
+        <input type="number" name="phone">
+        <input type="text" name="blood_group">
+        <input type="text" name="state">
+        <input type="number" name="pincode">
+        <input type="date" name="date_of_registration">
+        <input type="number" name="weight">
+        <input type="date" name="date_of_birth">
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
