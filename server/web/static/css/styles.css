@@ -143,3 +143,12 @@ a.bl-text:hover {
   height: 200px;
   margin: 20px 0 50px;
 }
+/*events*/
+#events {
+  text-align: center;
+}
+.ev-img {
+  width: 50%;
+  height: 250px;
+  margin: 20px;
+}
