@@ -15,8 +15,9 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
-from web import views as web_views
+from base import views as web_views
 from api import views as api_views
 
 from django.conf import settings
@@ -32,6 +33,8 @@ urlpatterns = [
     path('request-blood/', web_views.request_blood, name='request-blood'),
     path('donations/', web_views.donations, name='donations'),
     path('volunteer/', web_views.volunteer, name='volunteer'),
+
+    path('', include('users.urls')),
 
 
     path('test/', web_views.test, name='web_test'),
