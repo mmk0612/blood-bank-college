@@ -1,55 +1,139 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %} {% block title %}{% endblock %}
+{%block content%}
+<div class="container-fluid">
+  <h1 style="margin-bottom: 20px; text-align: center">
+    <strong>Register User</strong>
+  </h1>
 
-{% block title %}
-    Register User
-{% endblock %}
+  {% if form.errors %}
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      {% for field in form %} {% for error in field.errors %}
+      <li>{{ error|escape }}</li>
+      {% endfor %} {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% if messages %} {% for message in messages %}
+  <div class="alert alert-success" role="alert">{{ message }}</div>
+  {% endfor %} {% endif %}
 
-{% block content %}
+  <form method="post">
+    {{ form.csrf_token }}
 
-    <h1>Register User</h1>
-
-    {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <li>{{ error|escape }}</li>
-                    {% endfor %}
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-
-    <form method="post">
-        {{ form.csrf_token }}
-
-
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" name="username" class="form-control">
-        </div>
-        <input type="password" name="password">
-        <input type="email" name="email">
-        <input type="text" name="first_name">
-        <input type="text" name="last_name">
-        <input type="number" name="age">
-        <input type="number" name="phone">
-        <input type="text" name="blood_group">
-        <input type="text" name="state">
-        <input type="number" name="pincode">
-        <input type="date" name="date_of_registration">
-        <input type="number" name="weight">
-        <input type="date" name="date_of_birth">
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
+    <div class="row g-3">
+      <div class="mb-3 col-lg-6">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" />
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" />
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="mb-3 col-lg-6">
+        <label for="username" class="form-label">First Name</label>
+        <input type="text" name="username" class="form-control" />
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="username" class="form-label">Last Name</label>
+        <input type="text" name="username" class="form-control" />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>Andhra Pradesh</option>
+          <option>Assam</option>
+          <option>Bihar</option>
+          <option>Chandigarh</option>
+          <option>Chattisgarh</option>
+          <option>Delhi</option>
+          <option>Goa</option>
+          <option>Gujarat</option>
+          <option>Haryana</option>
+          <option>Himachal Pradesh</option>
+          <option>Jammu and Kashmir</option>
+          <option>Jharkhand</option>
+          <option>Karnataka</option>
+          <option>Kerala</option>
+          <option>Madhya Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Meghalaya</option>
+          <option>Mizoram</option>
+          <option>Odisha</option>
+          <option>Punjab</option>
+          <option>Rajasthan</option>
+          <option>Tamil Nadu</option>
+          <option>Uttarakhand</option>
+          <option>Uttar Pradesh</option>
+          <option>West Bengal</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputZip" class="form-label">Pincode</label>
+        <input type="text" class="form-control" id="inputZip" />
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="mb-3 col-lg-4">
+        <label for="phoneno" class="form-label">Phone</label>
+        <input type="number" name="phoneno" class="form-control" />
+      </div>
+      <div class="mb-3 col-lg-4">
+        <label for="date_of_birth" class="form-label">Date Of Birth</label>
+        <input type="date" name="date_of_birth" class="form-control" />
+      </div>
+      <div class="mb-3 col-lg-4">
+        <label for="date_of_reg" class="form-label">Date Of Registration</label>
+        <input type="date" name="date_of_reg" class="form-control" />
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="mb-3 col-lg-6">
+        <label for="inputState" class="form-label">Blood Group</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>O positive(+)</option>
+          <option>O negative(-)</option>
+          <option>A positive(+)</option>
+          <option>A negative(-)</option>
+          <option>B positive(+)</option>
+          <option>B negative(-)</option>
+          <option>AB positve(+)</option>
+          <option>AB negative(-)</option>
+        </select>
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="weight" class="form-label">Weight</label>
+        <input type="number" name="weight" class="form-control" />
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="mb-3 btn btn-primary btn-lg"
+      style="position: absolute; right: 215px; padding: 10px 50px"
+    >
+      Submit
+    </button>
+  </form>
+</div>
 {% endblock %}

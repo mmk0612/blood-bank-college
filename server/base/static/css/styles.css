@@ -150,5 +150,31 @@ a.bl-text:hover {
 .ev-img {
   width: 50%;
   height: 250px;
+  margin: 20px 0 50px;
+}
+.g {
+  position: relative;
+  right: 425px;
+}
+.w {
+  position: relative;
+  left: 425px;
+  color: #13ec49;
+}
+.card {
   margin: 20px;
+}
+.w:hover {
+  color: #245953;
+}
+.g:hover {
+  color: #576cbc;
+}
+/*register user*/
+.reg-head {
+  margin-bottom: 0px;
+  text-align: center;
+}
+.register-heading {
+  font-size: 3rem;
 }
