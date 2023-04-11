@@ -26,6 +26,20 @@ a:hover {
 .logo-div {
   padding: 10px 15% 0;
 }
+.loginbtn:hover {
+  background-color: #fff;
+  color: #ee3f46;
+}
+.registerbtn:hover {
+  background-color: #fff;
+  color: #ee3f46;
+}
+.loginbtn a:hover {
+  color: #ee3f46;
+}
+.registerbtn a:hover {
+  color: #ee3f46;
+}
 /*title section*/
 #title-main .container-fluid {
   padding: 0 15% 7%;
