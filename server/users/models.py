@@ -54,4 +54,5 @@ class Profile(AbstractUser):
     date_of_registration = models.DateField(auto_now_add=True)
     weight = models.IntegerField(blank=True, null=True)
     date_of_birth = models.DateField()
+    is_staff = models.BooleanField(default=False) #type: ignore
 
