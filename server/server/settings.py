@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'base',
     'api',
     'users.apps.UsersConfig',
+    'staff.apps.StaffConfig',
     # 'crispy_forms',
     # 'crispy_bootstrap5',
 ]
