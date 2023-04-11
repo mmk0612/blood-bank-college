@@ -1,130 +1,172 @@
 {% extends 'base.html' %}{% load static %} {% block title %}{% endblock %}
-{%block content%}
+{% block content %}
 <div class="container-fluid">
   <h1 style="margin-bottom: 20px; text-align: center">
     <strong>Register User</strong>
   </h1>
 
-  {% if form.errors %}
-  <div class="alert alert-danger" role="alert">
-    <ul>
-      {% for field in form %} {% for error in field.errors %}
-      <li>{{ error|escape }}</li>
-      {% endfor %} {% endfor %}
-    </ul>
-  </div>
-  {% endif %} {% if messages %} {% for message in messages %}
-  <div class="alert alert-success" role="alert">{{ message }}</div>
-  {% endfor %} {% endif %}
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-success" role="alert">{{ message }}</div>
+      {% endfor %}
+  {% endif %}
 
   <form method="post">
-    {{ form.csrf_token }}
+    {% csrf_token %}
 
     <div class="row g-3">
       <div class="mb-3 col-lg-6">
         <label for="username" class="form-label">Username</label>
-        <input type="text" name="username" class="form-control" />
+        <!-- <input type="text" name="username" class="form-control" /> -->
+        {{ form.username }}
       </div>
       <div class="mb-3 col-lg-6">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" id="password" class="form-control" />
+        <label for="password1" class="form-label">Password</label>
+        {{ form.password1 }}
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="password2" class="form-label">Confirm Password</label>
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.password2.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
     </div>
     <div class="row g-3">
       <div class="mb-3 col-lg-6">
-        <label for="username" class="form-label">First Name</label>
-        <input type="text" name="username" class="form-control" />
+        <label for="first_name" class="form-label">First Name</label>
+        {{ form.first_name }}
+        {% if form.first_name.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.first_name.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="mb-3 col-lg-6">
-        <label for="username" class="form-label">Last Name</label>
-        <input type="text" name="username" class="form-control" />
+        <label for="last_name" class="form-label">Last Name</label>
+        {{ form.last_name }}
+        {% if form.last_name.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.last_name.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-      />
+        {{ form.email }}
       <div id="emailHelp" class="form-text">
         We'll never share your email with anyone else.
       </div>
+      {% if form.email.errors %}
+          <div class="alert alert-danger" role="alert">
+              {% for error in form.email.errors %}
+                  <li>{{ error|escape }}</li>
+              {% endfor %}
+          </div>
+      {% endif %}
     </div>
     <div class="row g-3">
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>Andhra Pradesh</option>
-          <option>Assam</option>
-          <option>Bihar</option>
-          <option>Chandigarh</option>
-          <option>Chattisgarh</option>
-          <option>Delhi</option>
-          <option>Goa</option>
-          <option>Gujarat</option>
-          <option>Haryana</option>
-          <option>Himachal Pradesh</option>
-          <option>Jammu and Kashmir</option>
-          <option>Jharkhand</option>
-          <option>Karnataka</option>
-          <option>Kerala</option>
-          <option>Madhya Pradesh</option>
-          <option>Maharashtra</option>
-          <option>Meghalaya</option>
-          <option>Mizoram</option>
-          <option>Odisha</option>
-          <option>Punjab</option>
-          <option>Rajasthan</option>
-          <option>Tamil Nadu</option>
-          <option>Uttarakhand</option>
-          <option>Uttar Pradesh</option>
-          <option>West Bengal</option>
-        </select>
+        {{ form.state }}
+
+        {% if form.state.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.state.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="col-md-4">
         <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity" />
+        {{ form.city }}
+        {% if form.city.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.city.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="col-md-4 mb-3">
         <label for="inputZip" class="form-label">Pincode</label>
-        <input type="text" class="form-control" id="inputZip" />
+        {{ form.pincode }}
+        {% if form.pincode.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.pincode.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
     </div>
     <div class="row g-3">
       <div class="mb-3 col-lg-4">
         <label for="phoneno" class="form-label">Phone</label>
-        <input type="number" name="phoneno" class="form-control" />
+        {{ form.phone }}
+        {% if form.phone.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.phone.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="mb-3 col-lg-4">
         <label for="date_of_birth" class="form-label">Date Of Birth</label>
-        <input type="date" name="date_of_birth" class="form-control" />
+        {{ form.date_of_birth }}
+        {% if form.date_of_birth.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.date_of_birth.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="mb-3 col-lg-4">
         <label for="date_of_reg" class="form-label">Date Of Registration</label>
-        <input type="date" name="date_of_reg" class="form-control" />
+        {{ form.date_of_registration }}
+        {% if form.date_of_registration.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.date_of_registration.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
     </div>
     <div class="row g-3">
       <div class="mb-3 col-lg-6">
         <label for="inputState" class="form-label">Blood Group</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>O positive(+)</option>
-          <option>O negative(-)</option>
-          <option>A positive(+)</option>
-          <option>A negative(-)</option>
-          <option>B positive(+)</option>
-          <option>B negative(-)</option>
-          <option>AB positve(+)</option>
-          <option>AB negative(-)</option>
-        </select>
+        {{ form.blood_group }}
+        {% if form.blood_group.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.blood_group.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
       <div class="mb-3 col-lg-6">
         <label for="weight" class="form-label">Weight</label>
-        <input type="number" name="weight" class="form-control" />
+        {{ form.weight }}
+        {% if form.weight.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.weight.errors %}
+                    <li>{{ error|escape }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
       </div>
     </div>
     <button
