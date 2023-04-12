@@ -33,7 +33,7 @@ urlpatterns = [
     path('request-blood/', web_views.request_blood, name='request-blood'),
     path('donations/', web_views.donations, name='donations'),
     path('volunteer/', web_views.volunteer, name='volunteer'),
-    path('not-allowed/', web_views.not_allowed, name='not-allowed'),
+    # path('not-allowed/', web_views.not_allowed, name='not-allowed'),
 
     path('', include('users.urls')),
     path('staff/', include('staff.urls')),
