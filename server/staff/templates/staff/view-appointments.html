@@ -34,7 +34,7 @@
                         {% if appointment.fullfilled %}
                             <p>Fullfilled</p>
                         {% else %}
-                            <a href="{{ url_for('appointment.fullfill', appointment_id=appointment.id) }}" class="btn btn-success">Fullfill</a>
+                            <a href="{% url 'staff-fullfill-appointment' appointment.id %}" class="btn btn-primary">Fullfill</a>
                         {% endif %}
                     </td>
                 </tr>

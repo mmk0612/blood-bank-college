@@ -5,8 +5,7 @@ from .models import *
 
 admin.site.register(Clinic)
 admin.site.register(BloodAvailable)
-admin.site.register(DonorAppointment)
-admin.site.register(PatientAppointment)
+admin.site.register(Appointment)
 admin.site.register(BloodFromDonor)
 admin.site.register(BloodToPatient)
 admin.site.register(Staff)
