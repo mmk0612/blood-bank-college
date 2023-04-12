@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    View Appointments
+{% endblock %}
+
+{% block content %}
+    <h1> View Appointments </h1>
+
+    <input type="text" id="name-search" placeholder="Search by name">
+
+    <button id="search-button" class="btn btn-primary">Search</button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Date and Time</th>
+                <th> Phone Number </th>
+                <th> Email </th>
+                <th> Type </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+                <tr>
+                    <td> {{ appointment.name }} </td>
+                    <td> {{ appointment.date }} </td>
+                    <td> {{ appointment.phone_number }} </td>
+                    <td> {{ appointment.email }} </td>
+                    <td> {{ appointment.type }} </td>
+                    <td>
+                        {% if appointment.fullfilled %}
+                            <p>Fullfilled</p>
+                        {% else %}
+                            <a href="{{ url_for('appointment.fullfill', appointment_id=appointment.id) }}" class="btn btn-success">Fullfill</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

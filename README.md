@@ -92,7 +92,7 @@ after login, they have three options, donate, request and view appointments
         show various clinics and for each clinic
             show if the blood will be available
 
-    for both options show a form to 
+  for both options show a form to 
         select date
         file an appointment
 

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Appointment
+{% endblock %}
+
+{% block content %}
+    <h1>Create Appointment</h1>
+
+    {% if form.errors %}
+        <p>There was an error in the form.</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.clinic }}
+        {{ form.clinic.errors }}
+
+        <br>
+
+        {{ form.datetime }}
+        {{ form.datetime.errors }}
+
+        <br>
+
+        {{ form.type }}
+        {{ form.type.errors }}
+
+        <input type="submit" value="Create Appointment">
+    </form>
+{% endblock %}
