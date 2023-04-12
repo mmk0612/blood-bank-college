@@ -12,5 +12,13 @@
     {{ appointment.datetime_of_appointment }}
     {{ appointment.datetime_of_booking }}
 
+    bloods :
+
+    {{ bloods|length }} units
+
+    {% for blood in bloods %}
+        {{ blood.blood_id }}
+    {% endfor %}
+
 
 {% endblock %}

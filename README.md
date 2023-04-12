@@ -140,3 +140,23 @@ DONATED_TO_PATIENT_BLOOD
             how much blood donated in past x days
 
 
+
+FRONTEND JOB
+
+server/users/templates/users/register.html
+server/users/templates/users/login.html
+server/staff/templates/staff/view-appointments.html
+server/staff/templates/staff/homepage.html
+server/staff/templates/staff/fullfill-appointment.html
+server/staff/templates/staff/already-fullfilled.html
+server/base/templates/not-allowed.html
+server/base/templates/does-not-exist.html
+server/base/templates/base.html
+server/base/templates/base/view-appointments.html
+server/base/templates/base/homepage.html
+server/base/templates/base/events.html
+server/base/templates/base/donations.html
+server/base/templates/base/create-appointment.html
+server/base/templates/base/already-appointment.html
+server/base/templates/base/about-us.html
+

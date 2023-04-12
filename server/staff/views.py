@@ -49,6 +49,11 @@ def fullfill_appointment(request, appointment_id):
         appointment = Appointment.objects.get(appointment_id=appointment_id)
         context['appointment'] = appointment
         if appointment.appointment_fullfilled:
+            if appointment.type == 'Donor':
+                bloods = BloodFromDonor.objects.filter(appointment_id=appointment)
+            else:
+                bloods = BloodToPatient.objects.filter(appointment_id=appointment)
+            context['bloods'] = bloods
             return render(request, 'staff/already-fullfilled.html', context)
         if request.method == 'POST':
             form = BloodUnitsForm(request.POST)
@@ -71,6 +76,7 @@ def fullfill_appointment(request, appointment_id):
                     BloodToPatient.objects.bulk_create(bloods)
                 appointment.appointment_fullfilled = True
                 appointment.save()
+                context['bloods'] = bloods
                 return render(request, 'staff/already-fullfilled.html', context)
         else:
             form = BloodUnitsForm()
