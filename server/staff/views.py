@@ -27,7 +27,7 @@ def view_appointments(request):
     appointments = []
     appointments = Appointment.objects.filter(clinic_id=staff.clinic_id)
 
-    appoinments.sort(key=lambda x: x.datetime_of_appointment)
+    appointments.order_by('datetime_of_appointment')
 
     context = {'appointments': appointments}
     return render(request, 'staff/view-appointments.html', context)
@@ -39,20 +39,24 @@ def fullfill_appointment(request, appointment_id):
     if not request.user.is_staff:
         return render(request, 'not-allowed.html')
 
+    appointment_id = int(appointment_id)
+
     staff = Staff.objects.get(user_id=request.user)
+
+    context = {}
 
     if Appointment.objects.filter(appointment_id=appointment_id).exists():
         appointment = Appointment.objects.get(appointment_id=appointment_id)
-        context = {'appointment': appointment}
+        context['appointment'] = appointment
         if appointment.appointment_fullfilled:
-            return render(request, 'staff/already-fullfilled.html')
+            return render(request, 'staff/already-fullfilled.html', context)
         if request.method == 'POST':
             form = BloodUnitsForm(request.POST)
             if form.is_valid():
-                blood_units = form.cleaned_data['blood_units']
+                blood_units = form.cleaned_data['units']
                 bloods = []
                 for i in range(blood_units):
-                    if appointment.appointment_type == 'Donor':
+                    if appointment.type == 'Donor':
                         blood = BloodFromDonor(appointment_id = appointment)
                     else:
                         blood = BloodToPatient(appointment_id = appointment)
@@ -61,15 +65,18 @@ def fullfill_appointment(request, appointment_id):
                     except ValidationError as e:
                         return render(request, 'staff/fullfill-appointment.html', {'errors': e})
                     bloods.append(blood)
-                if appointment.appointment_type == 'Donor':
+                if appointment.type == 'Donor':
                     BloodFromDonor.objects.bulk_create(bloods)
                 else:
                     BloodToPatient.objects.bulk_create(bloods)
                 appointment.appointment_fullfilled = True
                 appointment.save()
                 return render(request, 'staff/already-fullfilled.html', context)
-            else:
-                return render(request, 'staff/fullfill-appointment.html', {'form': form})
+        else:
+            form = BloodUnitsForm()
+        context['form'] = form
+        return render(request, 'staff/fullfill-appointment.html', context)
+
 
     return render(request, 'does-not-exist.html')
 

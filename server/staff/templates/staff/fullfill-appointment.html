@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Fullfill Appointment
+{% endblock %}
+
+{% block content %}
+
+    {% if appointment.type == 'Donor' %}
+        Enter the number of units of blood received from the donor
+    {% else %}
+        Enter the number of units of blood donated to the patient
+    {% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.units }}
+        {{ form.units.errors }}
+
+        <br>
+
+        <input type="submit" value="Confirm">
+
+    </form>
+
+{% endblock %}
