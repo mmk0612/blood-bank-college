@@ -17,27 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
-from base import views as web_views
-from api import views as api_views
-
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', web_views.homepage, name='homepage'),
-    path('events/', web_views.events, name='events'),
-    path('about-us/', web_views.about_us, name='about-us'),
-    path('donate-blood/', web_views.donate_blood, name='donate-blood'),
-    path('request-blood/', web_views.request_blood, name='request-blood'),
-    path('donations/', web_views.donations, name='donations'),
-    path('volunteer/', web_views.volunteer, name='volunteer'),
-    # path('not-allowed/', web_views.not_allowed, name='not-allowed'),
-
+    path('', include('base.urls')),
     path('', include('users.urls')),
     path('staff/', include('staff.urls')),
-
-    path('api/test/', api_views.test, name='api_test'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
