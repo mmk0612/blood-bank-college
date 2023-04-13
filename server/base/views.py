@@ -4,26 +4,18 @@ from django.shortcuts import render, redirect
 from staff.models import Clinic, Appointment
 from .forms import CreateAppointmentForm
 
-TEMPLATE_HOMEPAGE = "homepage.html"
-TEMPLATE_EVENTS = "events.html"
-TEMPLATE_ABOUT_US = "about-us.html"
-TEMPLATE_DONATE_BLOOD = "donate-blood.html"
-TEMPLATE_REQUEST_BLOOD = "request-blood.html"
-TEMPLATE_DONATIONS = "donations.html"
-TEMPLATE_VOLUNTEER = "volunteer.html"
-
 # Create your views here.
 def homepage(request):
     context = {}
-    return render(request, TEMPLATE_HOMEPAGE, context)
+    return render(request, "base/homepage.html", context)
 
 def events(request):
     context = {}
-    return render(request, TEMPLATE_EVENTS, context)
+    return render(request, "base/events.html", context)
 
 def about_us(request):
     context = {}
-    return render(request, TEMPLATE_ABOUT_US, context)
+    return render(request, "base/about-us.html", context)
 
 
 def create_appointment(request):
@@ -75,12 +67,7 @@ def view_appointments(request):
 
 def donations(request):
     context = {}
-    return render(request, TEMPLATE_DONATIONS, context)
-
-def volunteer(request):
-    context = {}
-    return render(request, TEMPLATE_VOLUNTEER, context)
-
+    return render(request, "base/donations.html", context)
 
 def not_allowed(request):
     context = {}

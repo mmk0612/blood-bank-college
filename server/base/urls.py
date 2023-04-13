@@ -9,6 +9,5 @@ urlpatterns = [
     path('create-appointment/', create_appointment, name='user-create-appointment'),
     path('view-appointments/', view_appointments, name='user-view-appointments'),
     path('donations/', donations, name='donations'),
-    path('volunteer/', volunteer, name='volunteer'),
 
         ]
