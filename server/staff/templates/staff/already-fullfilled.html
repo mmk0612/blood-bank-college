@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Already Fullfilled
+{% endblock %}
+
+{% block content %}
+
+    {{ appointment.appointment_id }}
+    {{ appointment.user_id.first_name }}  {{ appointment.user_id.last_name }}
+    {{ appointment.type }}
+    {{ appointment.datetime_of_appointment }}
+    {{ appointment.datetime_of_booking }}
+
+    bloods :
+
+    {{ bloods|length }} units
+
+    {% for blood in bloods %}
+        {{ blood.blood_id }}
+    {% endfor %}
+
+
+{% endblock %}

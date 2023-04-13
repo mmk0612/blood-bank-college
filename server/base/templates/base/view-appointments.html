@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    View Appointments
+{% endblock %}
+
+{% block content %}
+    <h1>View Appointments</h1>
+
+    {% if pending_appointment is not None %}
+        You have a pending appointment on {{ pending_appointment.datetime_of_appointment }} at {{ pending_appointment.clinic_name }}.
+    {% endif %}
+
+    {% for appointment in appointments %}
+
+        {{ appointment.clinic_name }}
+        {{ appointment.datetime_of_appointment }}
+        {{ appointment.datetime_of_booking }}
+        {{ appointment.type }}
+        {% if appointment.fullfilled %} Fullfilled {% else %} Pending {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
