@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Already an Appointment</h1>
-
-    fuck off
-
-    see your appointments here <a href="{% url 'user-view-appointments' %}">link</a>
+    <div class="container-fluid" style="text-align: center;">
+        <h1 style="margin-bottom:30px; font-weight: bold;">
+            Sorry, you already have an appointment.
+        </h1>
+        <p style="margin-bottom:20px;">
+        You can only have one appointment at a time.</p>
+        <p style="margin-bottom:20px;">Kindly view 
+        your appointments here <a href="{% url 'user-view-appointments' %}" style="color:blue">Appointments</a></p>
+    </div>
 {% endblock %}
