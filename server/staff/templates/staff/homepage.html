@@ -6,6 +6,42 @@
 
 {% block content %}
     <h1>Staff Homepage</h1>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h2>CREATE APPOINTMENT</h2>
+              </div>
+              <div class="card-body">
+                <p>
+                  Create an appointment for the user to donate or request blood at any specified clinic.
+                </p>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-danger">
+                    <a href="/donations">Create Appointment</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header">
+                <h2>VIEW APPOINTMENT</h2>
+              </div>
+              <div class="card-body">
+                <p>
+                    View the appointment of the user to donate or request blood at any specified clinic.
+                </p>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-danger">
+                    <a href="/volunteer">VIEW APPOINTMENT</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
     <p>Staff homepage content goes here.</p>
 {% endblock %}
 

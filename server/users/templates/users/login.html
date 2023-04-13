@@ -1,8 +1,11 @@
-{% extends "base.html" %} {% block title %} {% endblock %} {% block content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% extends "base.html" %} {% block title %} Login {% endblock %} {% block content %}
 <div class="container-fluid">
+  <h1 style="margin-bottom: 20px; text-align: center">
+    <strong>User Login</strong>
+  </h1>
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
   <form method="POST">
     {% csrf_token %}
     <div class="row g-3">
