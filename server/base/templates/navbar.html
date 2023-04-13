@@ -5,11 +5,11 @@
     <div class="logo-div">
         <img src="{% static 'images/logo.jpeg' %}" alt="logo" class="logo" />
         {% if user.is_authenticated %}
-            {{ user.username }}
-            <a class="nav-link" href="/logout"> Logout</a>
+                <p style="position: absolute; bottom:547px; right:320px; color:#fff;"><i class="fa-solid fa-user" style="margin-right:4px;"></i>{{ user.username }}</p>
+                <button type="button" class="loginbtn btn btn-outline-primary" style="margin-top:75px; position: absolute; right:210px; padding:5px 10px; color:#fff;"><a class="nav-link" href="/logout"> Logout</a></button>
         {% else %}
-            <a class="nav-link" href="/login"> Login</a>
-            <a class="nav-link" href="/register"> Register</a>
+                <button type="button" class="loginbtn btn btn-outline-secondary btn-lg" style="margin-top:75px; position: absolute; right:315px; padding:5px 20px; color:#fff;"><a class="nav-link" href="/login"> Login</a></button>
+                <button type="button" class="registerbtn btn btn-outline-secondary btn-lg" style="margin-top:75px; position: absolute; right:210px; padding:5px 10px; color:#fff;"><a class="nav-link" href="/register"> Register</a></button>
         {% endif %}
     </div>
 
