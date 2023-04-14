@@ -28,10 +28,10 @@ class Migration(migrations.Migration):
             name='Clinic',
             fields=[
                 ('clinic_id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=200)),
                 ('address', models.CharField(max_length=500)),
                 ('pincode', models.IntegerField()),
                 ('state', models.CharField(choices=[('Andhra Pradesh', 'Andhra Pradesh'), ('Assam', 'Assam'), ('Bihar', 'Bihar'), ('Chandigarh', 'Chandigarh'), ('Chattisgarh', 'Chattisgarh'), ('Delhi', 'Delhi'), ('Goa', 'Goa'), ('Gujarat', 'Gujarat'), ('Haryana', 'Haryana'), ('Himachal Pradesh', 'Himachal Pradesh'), ('Jammu and Kashmir', 'Jammu And Kashmir'), ('Jharkhand', 'Jharkhand'), ('Karnataka', 'Karnataka'), ('Kerala', 'Kerala'), ('Madhya Pradesh', 'Madhya Pradesh'), ('Maharashtra', 'Maharashtra'), ('Meghalaya', 'Meghalaya'), ('Mizoram', 'Mizoram'), ('Odisha', 'Odisha'), ('Punjab', 'Punjab'), ('Rajasthan', 'Rajasthan'), ('Tamil Nadu', 'Tamil Nadu'), ('Uttarakhand', 'Uttarakhand'), ('Uttar Pradesh', 'Uttar Pradesh'), ('West Bengal', 'West Bengal')], max_length=20)),
+                ('name', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
