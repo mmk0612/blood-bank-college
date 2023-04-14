@@ -20,12 +20,14 @@ def about_us(request):
 
 def create_appointment(request):
     if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to create an appointment.')
         return redirect('user-login')
 
     # find if already an appointment
     context = {}
 
-    if Appointment.objects.filter(user_id=request.user).exists():
+    if Appointment.objects.filter(user_id=request.user, appointment_fullfilled=False).exists():
+        messages.error(request, 'You already have an appointment.')
         return render(request, 'base/already-appointment.html', context)
 
     if request.method == 'POST':
@@ -53,6 +55,7 @@ def create_appointment(request):
 
 def view_appointments(request):
     if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to view your appointments.')
         return redirect('user-login')
 
     appointments = Appointment.objects.filter(user_id=request.user)

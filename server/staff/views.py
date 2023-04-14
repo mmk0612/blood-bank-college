@@ -3,13 +3,16 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from users.models import Profile
+from django.contrib import messages
 
 # Create your views here.
 
 def staff_homepage(request):
     if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to view the staff homepage.')
         return redirect('user-login')
     if not request.user.is_staff:
+        messages.error(request, 'You must be a staff member to view the staff homepage.')
         return render(request, 'not_allowed.html')
     context = {}
     return render(request, 'staff/homepage.html', context)
@@ -17,8 +20,10 @@ def staff_homepage(request):
 
 def view_appointments(request):
     if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to view your appointments.')
         return redirect('user-login')
     if not request.user.is_staff:
+        messages.error(request, 'You must be a staff member to view appointments.')
         return render(request, 'not_allowed.html')
 
     query_name = request.GET.get('name', '')
@@ -35,8 +40,10 @@ def view_appointments(request):
 
 def fullfill_appointment(request, appointment_id):
     if not request.user.is_authenticated:
+        messages.error(request, 'You must be logged in to fullfill an appointment.')
         return redirect('user-login')
     if not request.user.is_staff:
+        messages.error(request, 'You must be a staff member to fullfill an appointment.')
         return render(request, 'not-allowed.html')
 
     appointment_id = int(appointment_id)
@@ -68,7 +75,8 @@ def fullfill_appointment(request, appointment_id):
                     try:
                         blood.full_clean()
                     except ValidationError as e:
-                        return render(request, 'staff/fullfill-appointment.html', {'errors': e})
+                        messages.error(request, 'Error: ' + str(e))
+                        return render(request, 'staff/fullfill-appointment.html')
                     bloods.append(blood)
                 if appointment.type == 'Donor':
                     BloodFromDonor.objects.bulk_create(bloods)
@@ -77,6 +85,7 @@ def fullfill_appointment(request, appointment_id):
                 appointment.appointment_fullfilled = True
                 appointment.save()
                 context['bloods'] = bloods
+                messages.success(request, 'Appointment fullfilled successfully.')
                 return render(request, 'staff/already-fullfilled.html', context)
         else:
             form = BloodUnitsForm()
