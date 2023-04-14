@@ -16,7 +16,7 @@
 
     <div class="row g-3">
       <div class="mb-3 col-lg-6">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label" style="font-weight: bold;">Username</label>
         <!-- <input type="text" name="username" class="form-control" /> -->
         {{ form.username }}
       </div>
@@ -128,17 +128,6 @@
         {% if form.date_of_birth.errors %}
             <div class="alert alert-danger" role="alert">
                 {% for error in form.date_of_birth.errors %}
-                    <li>{{ error|escape }}</li>
-                {% endfor %}
-            </div>
-        {% endif %}
-      </div>
-      <div class="mb-3 col-lg-4">
-        <label for="date_of_reg" class="form-label">Date Of Registration</label>
-        {{ form.date_of_registration }}
-        {% if form.date_of_registration.errors %}
-            <div class="alert alert-danger" role="alert">
-                {% for error in form.date_of_registration.errors %}
                     <li>{{ error|escape }}</li>
                 {% endfor %}
             </div>

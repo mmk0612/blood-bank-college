@@ -6,35 +6,60 @@
 
 {% block content %}
 <div class="container-fluid">
-    {% for appointment in appointments %}
+    {% if pending_appointment %}<h2 style="text-align: center; margin-bottom: 50px;"><strong>You have a pending appointment</strong></h2>
     <div style="display:flex; flex-direction:row;">
-    <div><h4><strong>Appointment-id:</strong></h4></div>
-    <div style="position:relative; left:600px;"><h4>{{ appointment.appointment_id }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>First-Name:</strong></h4></div>
-        <div style="position:relative; left:661px;"><h4>{{ appointment.user_id.first_name }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>Last-Name:</strong></h4></div>
-        <div style="position:relative; left:665px;"><h4>{{ appointment.user_id.last_name }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>Appointment-Type:</strong></h4></div>
-        <div style="position:relative; left:564px;"><h4>{{ appointment.type }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>Appointment-Date:</strong></h4></div>
-        <div style="position:relative; left:566px;"><h4>{{ appointment.datetime_of_appointment }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>Appointment-Booking-Date:</strong></h4></div>
-        <div style="position:relative; left:450px;"><h4>{{ appointment.datetime_of_booking }}</h4></div>
-    </div>
-    <div style="display:flex; flex-direction:row;">
-        <div><h4><strong>Fulfilled/Pending:</strong></h4></div>
-        <div style="position:relative; left:585px;"><h4>{% if appointment.fullfilled %} Fullfilled {% else %} Pending {% endif %}</h4></div>
-    </div>
-    {% endfor %}
+        <div><h4><strong>Appointment-id:</strong></h4></div>
+        <div style="position:relative; left:600px;"><h4>{{ pending_appointment.appointment_id }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>First-Name:</strong></h4></div>
+            <div style="position:relative; left:661px;"><h4>{{ pending_appointment.user_id.first_name }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>Last-Name:</strong></h4></div>
+            <div style="position:relative; left:665px;"><h4>{{ pending_appointment.user_id.last_name }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>Appointment-Type:</strong></h4></div>
+            <div style="position:relative; left:564px;"><h4>{{ pending_appointment.type }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>Appointment-Date:</strong></h4></div>
+            <div style="position:relative; left:566px;"><h4>{{ pending_appointment.datetime_of_appointment }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>Appointment-Booking-Date:</strong></h4></div>
+            <div style="position:relative; left:450px;"><h4>{{ pending_appointment.datetime_of_booking }}</h4></div>
+        </div>
+        <div style="display:flex; flex-direction:row;">
+            <div><h4><strong>Fulfilled/Pending:</strong></h4></div>
+            <div style="position:relative; left:585px;"><h4>{% if pending_appointment.appointment_fullfilled %} Fullfilled {% else %} Pending {% endif %}</h4></div>
+        </div>
+        <hr>
+    {% endif %}
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Type</th>
+              <th scope="col">Appointment Date</th>
+              <th scope="col">Booking Date</th>
+              <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+                {% if not appointment.appointment_fullfilled %}
+                    <tr class="table-light">
+                        <td>{{ appointment.appointment_id }}</td>
+                        <td>{{ appointment.type }}</td>
+                        <td>{{ appointment.datetime_of_appointment }}</td>
+                        <td>{{ appointment.datetime_of_booking }}</td>
+                        <td>{% if appointment.appointment_fullfilled %} Fullfilled {% else %} Pending {% endif %}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
