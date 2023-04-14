@@ -177,22 +177,24 @@ a.bl-text:hover {
   margin: 20px 0 50px;
 }
 .g {
-  position: relative;
-  right: 425px;
+  position: absolute;
+  left:20px;
 }
 .w {
-  position: relative;
-  left: 425px;
-  color: #13ec49;
+  position: absolute;
+  right:20px;
 }
 .card {
   margin: 20px;
 }
 .w:hover {
-  color: #245953;
+  color: #13ec49;
 }
 .g:hover {
   color: #576cbc;
+}
+#events .card-footer{
+  padding-bottom: 40px;
 }
 /*register user*/
 .reg-head {
