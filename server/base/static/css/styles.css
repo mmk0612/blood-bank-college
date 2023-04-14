@@ -85,8 +85,8 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-a.bl-text:hover {
-  color: #dc3535;
+#main-blood a{
+  color:#fff;
 }
 /*feature*/
 #features {
