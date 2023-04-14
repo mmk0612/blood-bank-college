@@ -101,6 +101,9 @@ a:hover {
   background-color: #ee3f46;
   color: #fff;
 }
+#articles p{
+  text-align: justify;
+}
 .article-text,
 .names {
   line-height: 1.5;
