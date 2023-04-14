@@ -4,7 +4,7 @@ from django.db import migrations
 from users.models import Profile
 
 def add_admin(apps, schema_editor):
-    Profile.objects.create(
+    Profile.objects.create_superuser(
         username='admin',
         password='admin',
         email="admin@example.com",
@@ -17,9 +17,7 @@ def add_admin(apps, schema_editor):
         pincode=110029,
         date_of_birth="1969-07-16",
         weight=69,
-        is_superuser=True,
         )
-
 
 
 class Migration(migrations.Migration):
