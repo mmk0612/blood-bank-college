@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
-from staff.models import Clinic, Appointment
+from staff.models import Clinic, Appointment, BloodFromDonor
 from .forms import CreateAppointmentForm
 
 # Create your views here.
@@ -76,3 +76,29 @@ def not_allowed(request):
     context = {}
     return render(request, 'not-allowed.html', context)
 
+
+class RecentDonors:
+    def __init__(self, name, state, blood_donated, datetime_of_appointment):
+        self.name = name
+        self.state = state
+        self.blood_donated = blood_donated
+        self.datetime_of_appointment = datetime_of_appointment
+
+def recent_donors(request):
+    "Show last 10 blood donors"
+
+    context = {}
+
+    appointments = Appointment.objects.all().filter(appointment_fullfilled=True).order_by('-datetime_of_appointment')[:10]
+    recent_donors = []
+
+    for appointment in appointments:
+        name = appointment.user_id.first_name + " " + appointment.user_id.last_name
+        state = appointment.user_id.state
+        blood_donated = len(BloodFromDonor.objects.all().filter(appointment_id=appointment))
+        datetime_of_appointment = appointment.datetime_of_appointment
+        recent_donors.append(RecentDonors(name, state, blood_donated, datetime_of_appointment))
+
+    context['recent_donors'] = recent_donors
+
+    return render(request, 'base/recent-donors.html', context)

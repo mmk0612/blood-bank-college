@@ -79,11 +79,27 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# mysql
+
+import dotenv
+import os
+
+dotenv.load_dotenv()
+
+BLOODBANK_DATABASE_NAME = os.getenv("BLOODBANK_DATABASE_NAME")
+BLOODBANK_DATABASE_USER = os.getenv("BLOODBANK_DATABASE_USER")
+BLOODBANK_DATABASE_PASS = os.getenv("BLOODBANK_DATABASE_PASS")
+BLOODBANK_DATABASE_HOST = os.getenv("BLOODBANK_DATABASE_HOST")
+
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': BLOODBANK_DATABASE_NAME,
+        'USER': BLOODBANK_DATABASE_USER,
+        'PASSWORD': BLOODBANK_DATABASE_PASS,
+        'HOST': BLOODBANK_DATABASE_HOST,
     }
 }
 
