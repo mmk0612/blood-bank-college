@@ -20,11 +20,6 @@ def add_users(apps, schema_editor):
         )
 
 
-
-
-
-
-
 class Migration(migrations.Migration):
 
     dependencies = [
