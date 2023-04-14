@@ -95,6 +95,14 @@ a:hover {
 .card {
   text-align: center;
 }
+.jumbotron {
+  position: fixed;
+  background: #000 url("images/cardbg.jpeg") center center;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  }
 /*articles*/
 #articles {
   text-align: center;
