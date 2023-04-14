@@ -30,11 +30,13 @@
                     <td> {{ appointment.datetime_of_booking }} </td>
                     <td> {{ appointment.type }} </td>
                     <td>
-                        {% if appointment.fullfilled %}
-                            <p>Fullfilled</p>
-                        {% else %}
-                            <a href="{% url 'staff-fullfill-appointment' appointment.appointment_id %}" class="btn btn-primary">Fullfill</a>
-                        {% endif %}
+                        <a href="{% url 'staff-fullfill-appointment' appointment.appointment_id %}" class="btn btn-primary">
+                            {% if appointment.appointment_fullfilled %}
+                                View
+                            {% else %}
+                                Fullfill
+                            {% endif %}
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

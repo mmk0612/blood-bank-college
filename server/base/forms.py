@@ -7,7 +7,7 @@ class CreateAppointmentForm(forms.Form):
     clinic = forms.CharField(
             widget=forms.Select(
                 attrs={'class': 'form-control'},
-                choices=[(0, "Select a Clinic")] + [(clinic.clinic_id, clinic.name) for clinic in Clinic.objects.all()],
+                choices=[(0, "Select a Clinic")] + [(clinic.clinic_id, clinic.name+', '+clinic.state) for clinic in Clinic.objects.all()],
             ),
             initial="Select a clinic",
             required=True,

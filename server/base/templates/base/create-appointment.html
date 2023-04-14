@@ -5,28 +5,35 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Create Appointment</h1>
+<div class="container-fluid">
+    <h2 style="text-align: center; margin-bottom:40px;"><strong>Create An Appointment</strong></h2>
 
     {% if form.errors %}
-        <p>There was an error in the form.</p>
+       <p>There was an error in the form.</p>
     {% endif %}
 
     <form method="post">
         {% csrf_token %}
-        
-        {{ form.clinic }}
-        {{ form.clinic.errors }}
-
-        <br>
-
-        {{ form.datetime }}
-        {{ form.datetime.errors }}
-
-        <br>
-
-        {{ form.type }}
-        {{ form.type.errors }}
-
-        <input type="submit" value="Create Appointment">
+        <div class="row g-3">
+            <div class="mb-3 col-md-6">
+                <label for="Clinic" class="form-label">Clinic</label>
+                    {{ form.clinic }}
+                    {{ form.clinic.errors }}
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Date" class="form-label">Date For Appointment</label>
+                    {{ form.datetime }}
+                    {{ form.datetime.errors }}
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="mb-3 col-md-6">
+                <label for="Type" class="form-label">Appointment Type</label>
+                    {{ form.type }}
+                    {{ form.type.errors }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-6 btn-lg" style="margin-left:250px; margin-top:40px;">Create Appointment</button>
     </form>
+</div>
 {% endblock %}

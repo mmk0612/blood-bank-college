@@ -49,7 +49,7 @@
         </thead>
         <tbody>
             {% for appointment in appointments %}
-                {% if not appointment.appointment_fullfilled %}
+                {% if appointment.appointment_fullfilled %}
                     <tr class="table-light">
                         <td>{{ appointment.appointment_id }}</td>
                         <td>{{ appointment.type }}</td>
