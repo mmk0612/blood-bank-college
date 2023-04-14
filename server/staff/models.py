@@ -7,7 +7,7 @@ from users.models import Profile
 class Clinic(models.Model):
     clinic_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    address = models.CharField(max_length=200)
+    address = models.CharField(max_length=500)
     pincode = models.IntegerField()
     state = models.CharField(max_length=20, choices=StateEnum.choices, null=False, blank=False)
 
