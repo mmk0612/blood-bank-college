@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from .forms import Profile, ProfileCreationForm, ProfileLoginForm
 from django.contrib.auth import logout
+from django.contrib import messages
 
 # Create your views here.
 
 def user_register(request):
     if request.user.is_authenticated:
+        messages.info(request, 'You are already logged in')
         return redirect('homepage')
+
     if request.method == 'POST':
         form = ProfileCreationForm(request.POST)
         if form.is_valid():
@@ -28,5 +31,6 @@ def user_login(request):
 
 def user_logout(request):
     if request.user.is_authenticated:
+        messages.info(request, 'You have been logged out')
         logout(request)
     return redirect('homepage')
