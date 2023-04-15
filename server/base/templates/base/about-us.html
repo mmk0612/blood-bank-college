@@ -6,61 +6,60 @@
 {% endblock %}
 
 {% block content %}
-
-    <section id="ot">
-      <h1 style="margin-bottom: 0;"><strong>OUR TEAM</strong></h1>
-    </section>
     <section id="about">
-      <div
-        id="Aboutcarousel"
-        class="carousel slide container-fluid"
-        data-ride="carousel"
-        data-interval="1000"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <h2><strong>Mihir Kumar</strong></h6>
-            <img
-              class="about-img"
-              src="{% static 'images/mmk.jpeg' %}"
-              alt="mmk-pic"
-            />
-            <p>
-              Mihir is a full stack web developer and founder at BloodSourceInc
-              taking care of the management of this website.
-            </p>
-            <p>Contact No.:9643522963</p>
+      <div class="container-fluid">
+        <h1 style="margin-bottom: 40px;"><strong>OUR TEAM</strong></h1>
+        <div
+          id="Aboutcarousel"
+          class="carousel slide container-fluid"
+          data-ride="carousel"
+          data-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2><strong>Mihir Kumar</strong></h6>
+              <img
+                class="about-img"
+                src="{% static 'images/mmk.jpeg' %}"
+                alt="mmk-pic"
+              />
+              <p>
+                Mihir is a full stack web developer and founder at BloodSourceInc
+                taking care of the management of this website.
+              </p>
+              <p>Contact No.:9643522963</p>
+            </div>
+            <div class="carousel-item">
+              <h2><strong>Monika</strong></h2>
+              <img
+                class="about-img"
+                src="{% static 'images/moni.jpg' %}"
+                alt="monika-pic"
+              />
+              <p>
+                Monika is a web designer at and co-founder BloodSourceInc designing
+                key elements of our website.
+              </p>
+              <p>Contact No.:9013075758</p>
+            </div>
           </div>
-          <div class="carousel-item">
-            <h2><strong>Monika</strong></h2>
-            <img
-              class="about-img"
-              src="{% static 'images/moni.jpg' %}"
-              alt="monika-pic"
-            />
-            <p>
-              Monika is a web designer at and co-founder BloodSourceInc designing
-              key elements of our website.
-            </p>
-            <p>Contact No.:9013075758</p>
-          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#Aboutcarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#Aboutcarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#Aboutcarousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#Aboutcarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon"></span>
-        </button>
       </div>
     </section>
 
