@@ -14,7 +14,7 @@ class Clinic(models.Model):
 class BloodAvailable(models.Model):
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     blood_group = models.CharField(max_length=3, choices=BloodGroupEnum.choices)
-    units_available = models.IntegerField(default = 5)
+    units_available = models.IntegerField()
     models.UniqueConstraint(fields=['clinic_id', 'blood_group'], name='unique_clinic_blood')
 
 # appointment id in both tables should be unique
