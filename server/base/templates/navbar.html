@@ -52,6 +52,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#footer"> Contact-us</a>
                     </li>
+                    {% if request.user.is_staff %}
+                    <li>
+                        <a class="nav-link" href="/staff/homepage"> Staff</a>
+                    </li>
+                    {% endif %}
             </div>
         </nav>
     </div>

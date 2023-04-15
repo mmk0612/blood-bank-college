@@ -8,7 +8,11 @@
 {% block content %}
     <section id="about">
       <div class="container-fluid">
-        <h1 style="margin-bottom: 40px;"><strong>OUR TEAM</strong></h1>
+        <div class="wrapper two">
+          <div class="neon">
+            <h1><strong>OUR TEAM</strong></h1>
+          </div>
+      </div>
         <div
           id="Aboutcarousel"
           class="carousel slide container-fluid"
@@ -17,30 +21,49 @@
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <h2><strong>Mihir Kumar</strong></h6>
+              <div class="wrapper ten">
+                <div>
+                    <h2 class="bounce">
+                        <span>Mihir Kumar</span>
+                    </h2>
+                </div>
+            </div>
               <img
                 class="about-img"
                 src="{% static 'images/mmk.jpeg' %}"
                 alt="mmk-pic"
               />
-              <p>
-                Mihir is a full stack web developer and founder at BloodSourceInc
-                taking care of the management of this website.
-              </p>
-              <p>Contact No.:9643522963</p>
+              <div class="wrapper six">
+                <div>
+                  <p class="flicker">
+                    Mihir is a full stack web developer and founder at BloodSourceInc
+                    taking care of the management of this website.
+                  </p>
+                  <p class="flicker">Contact No.:9643522963</p>
+                </div>
+            </div>
             </div>
             <div class="carousel-item">
-              <h2><strong>Monika</strong></h2>
+              <div class="wrapper ten">
+                <div>
+                    <h2 class="bounce">
+                        <span>Monika</span>
+                    </h2>
+                </div>
+            </div>
               <img
                 class="about-img"
                 src="{% static 'images/moni.jpg' %}"
                 alt="monika-pic"
               />
-              <p>
-                Monika is a web designer at and co-founder BloodSourceInc designing
-                key elements of our website.
-              </p>
-              <p>Contact No.:9013075758</p>
+              <div class="wrapper six">
+                <div>
+                  <p class="flicker">
+                    Monika is a web designer at and co-founder BloodSourceInc designing
+                    key elements of our website.
+                  </p>
+                  <p class="flicker">Contact No.:9013075758</p>
+                </div>
             </div>
           </div>
           <button

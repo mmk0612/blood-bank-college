@@ -114,6 +114,37 @@ a:hover {
   width: 50%;
   padding: 50px 0;
 }
+.wrapper.five {
+  font-size: 3rem;
+  font-family: "Play", sans-serif;
+  z-index:-10;
+}
+.float-box {
+  margin: auto;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transform: perspective(100px) rotateY(10deg);
+}
+.float {
+  animation: floating 2s linear infinite;
+  margin: 3px auto;
+  font-family: 'Merienda', sans-serif;
+  padding: 1rem;
+  color: #ffffff;
+  background: #D0312D;
+  box-shadow: -10px -17px 8px 0px #800e0b;
+}
+@keyframes floating {
+  0% {
+      transform: translate(0%, 30%);
+  }
+  50% {
+      transform: translate(0%, -30%);
+  }
+  100% {
+      transform: translate(0%, 30%);
+  }
+}
 /*contact-us*/
 #footer {
   text-align: center;
@@ -153,13 +184,13 @@ a:hover {
 }
 @keyframes color-change {
   0% {
-    background-color: #ffa900;
+    background-color: #2c0101;
   }
   50% {
-    background-color: #ff7100;
+    background-color: #2c0101;
   }
   100% {
-    background-color: #ffa900;
+    background-color: #2c0101;
   }
 }
 #about .container-fluid {
@@ -169,6 +200,93 @@ a:hover {
   width: 15%;
   height: 200px;
   margin: 20px 0 50px;
+}
+.abtext{
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+.bounce {
+  font-size: 3rem;
+  width: 100%;
+  margin: 2rem auto;
+  margin-top: 10px;
+  display: inline-flex;
+  justify-content: center;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e);
+}
+.bounce span {
+  display: inline-flex;
+  color: #fff;
+  font-family: "Play", sans-serif;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+      transform: translateY(0);
+  }
+  25% {
+      transform: translateY(-3px);
+  }
+}
+.ten span:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.ten span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.ten span:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.ten span:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+.ten span:nth-of-type(5) {
+  animation-delay: 0.5s;
+}
+.ten span:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.wrapper.two {
+  font-family: "Play", sans-serif;
+}
+.neon h1 {
+  margin: 1rem auto;
+  animation: neon 1s ease infinite;
+}
+@keyframes neon {
+  0%,
+  100% {
+      text-shadow: 0 0 10px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 2px #fed128, 2px 2px 2px #806914;
+      color: #f5efcb;
+  }
+  50% {
+      text-shadow: 0 0 2px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 2px #800e0b, 4px 4px 2px #40340a;
+      color: #eda0d3;
+  }
+}
+.flicker {
+  font-size: 1rem;
+  font-family: 'Merienda', sans-serif;
+  margin-top: 5px;
+  margin: 1rem auto;
+  color: #fffefe61;
+  background: -webkit-gradient(linear, left top, right top, from(#e6e6e6), to(#1d1c1c), color-stop(0.8, #ffffff)) no-repeat;
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.8, #fff)) no-repeat;
+  background-size: 110px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flick 1.5s infinite ease-in-out;
+}
+@keyframes flick {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
 /*events*/
 #events {
