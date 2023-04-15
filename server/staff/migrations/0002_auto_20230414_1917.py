@@ -75,7 +75,7 @@ INSERT INTO staff_clinic VALUES(67,'GT Road, opposite Axis Bank Branch, Bandel',
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('staff', '0001_initial'),
+        ('staff', '0001a'),
     ]
 
     operations = [
