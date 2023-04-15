@@ -9,6 +9,7 @@ def change_passwords(apps, schema_editor):
             continue
         user.set_password(user.password)
         user.save()
+
 class Migration(migrations.Migration):
 
     dependencies = [

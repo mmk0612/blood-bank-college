@@ -14,7 +14,6 @@ def add_clinic_for_mihir(apps, schema_editor):
             )
 
 
-
 class Migration(migrations.Migration):
 
     dependencies = [

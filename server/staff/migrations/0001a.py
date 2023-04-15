@@ -40,6 +40,10 @@ for each row
 INSERT INTO staff_clinic VALUES(1,'vsdvsdf',12432,'Bihar','ABCD');
 """
 
+def run_sql(apps, schema_editor):
+    with schema_editor.connection.cursor() as cursor:
+        cursor.execute(SQL_QUERIES)
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -48,5 +52,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunSQL(SQL_QUERIES),
+        migrations.RunPython(run_sql)
     ]
