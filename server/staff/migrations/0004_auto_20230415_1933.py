@@ -7,12 +7,12 @@ def add_appointments(apps, schema_editor):
     User = apps.get_model('users', 'Profile')
     Clinic = apps.get_model('staff', 'Clinic')
 
-    Appointment.objects.create(user_id=User.objects.get(user_id=1), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-15 19:33:00')
-    Appointment.objects.create(user_id=User.objects.get(user_id=2), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-12 20:12:00')
-    Appointment.objects.create(user_id=User.objects.get(user_id=3), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-13 21:12:00')
-    Appointment.objects.create(user_id=User.objects.get(user_id=4), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-14 22:12:00')
-    Appointment.objects.create(user_id=User.objects.get(user_id=5), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-15 23:12:00')
-    Appointment.objects.create(user_id=User.objects.get(user_id=6), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-16 00:12:00')
+    # Appointment.objects.create(user_id=User.objects.get(id=1), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-15 19:33:00')
+    # Appointment.objects.create(user_id=User.objects.get(id=2), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-12 20:12:00')
+    Appointment.objects.create(user_id=User.objects.get(id=3), clinic_id=Clinic.objects.get(clinic_id=10), type='Donor', datetime_of_appointment='2023-04-13 21:12:00')
+    Appointment.objects.create(user_id=User.objects.get(id=4), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-14 22:12:00')
+    Appointment.objects.create(user_id=User.objects.get(id=5), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-15 23:12:00')
+    Appointment.objects.create(user_id=User.objects.get(id=6), clinic_id=Clinic.objects.get(clinic_id=11), type='Donor', datetime_of_appointment='2023-04-16 00:12:00')
 
 
 

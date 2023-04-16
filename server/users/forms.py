@@ -5,7 +5,7 @@ from .models import Profile, StateEnum, BloodGroupEnum
 class ProfileCreationForm(UserCreationForm):
     class Meta:
         model = Profile
-        fields = ('username', 'email', 'password1', 'password2', 'phone', 'blood_group', 'state', 'pincode', 'weight', 'date_of_birth', 'city')
+        fields = ('username','first_name','last_name','email', 'password1', 'password2', 'phone', 'blood_group', 'state', 'pincode', 'weight', 'date_of_birth', 'city')
 
 
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))

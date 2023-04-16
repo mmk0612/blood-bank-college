@@ -3,7 +3,6 @@
 from django.db import migrations
 
 SQL_QUERIES = """
-INSERT INTO staff_clinic VALUES(1,'vsdvsdf',12432,'Bihar','ABCD');
 INSERT INTO staff_clinic VALUES(2,'Door Number-18-516/2/1, Plot Number 1, Health City, Chinnagadili,',530040,'Andhra Pradesh','Apollo Health City');
 INSERT INTO staff_clinic VALUES(3,'18-1-3 KGH Down Road, Andhra Pradesh, Near Rajiv Gandhi Statue',530002,'Andhra Pradesh','Mycure Hospital');
 INSERT INTO staff_clinic VALUES(4,'NH- 219, Kuppam',517425,'Andhra Pradesh','P.E.S. Institute of Medical Sciences and Research');

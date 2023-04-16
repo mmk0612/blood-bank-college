@@ -36,7 +36,7 @@
             <div style="position:relative; left:585px;"><h4>{% if pending_appointment.appointment_fullfilled %} Fullfilled {% else %} Pending {% endif %}</h4></div>
         </div>
         <hr>
-    {% endif %}
+    {% else %}
     <table class="table">
         <thead>
             <tr>
@@ -61,5 +61,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 </div>
 {% endblock %}
