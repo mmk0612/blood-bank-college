@@ -46,3 +46,10 @@ class Staff(models.Model):
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     models.UniqueConstraint(fields=['clinic_id', 'user_id'], name='unique_clinic_user')
 
+class MoneyReceived(models.Model):
+    money_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    amount = models.IntegerField()
+    date_of_payment = models.DateField()
+    models.UniqueConstraint(fields=['user_id', 'date_of_payment'], name='unique_user_date')
+

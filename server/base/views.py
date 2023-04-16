@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
-from staff.models import Clinic, Appointment, BloodFromDonor
+from staff.models import Clinic, Appointment, BloodFromDonor, MoneyReceived
 from .forms import CreateAppointmentForm
 
 # Create your views here.
@@ -69,7 +69,8 @@ def view_appointments(request):
 
 
 def donations(request):
-    context = {}
+    donors = MoneyReceived.objects.all()
+    context = {'donors': donors}
     return render(request, "base/donations.html", context)
 
 def not_allowed(request):
@@ -102,3 +103,4 @@ def recent_donors(request):
     context['recent_donors'] = recent_donors
 
     return render(request, 'base/recent-donors.html', context)
+
