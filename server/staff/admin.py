@@ -9,4 +9,6 @@ admin.site.register(Appointment)
 admin.site.register(BloodFromDonor)
 admin.site.register(BloodToPatient)
 admin.site.register(Staff)
+admin.site.register(MoneyReceived)
+
 
