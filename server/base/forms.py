@@ -13,11 +13,11 @@ class CreateAppointmentForm(forms.Form):
             required=True,
             error_messages={'required': 'Please select a clinic.'}
         )
-    datetime = forms.DateTimeField(
-            widget=forms.DateTimeInput(
+    datetime = forms.DateField(
+            widget=forms.DateInput(
                 attrs={'class': 'form-control'},
             ),
-            input_formats = ['%Y-%m-%d %H:%M'],
+            input_formats = ['%d-%m-%Y'],
             required=True,
             error_messages={'required': 'Please select a date and time.'},
         )

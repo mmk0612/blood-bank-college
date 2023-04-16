@@ -24,8 +24,8 @@ class Appointment(models.Model):
     user_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     type = models.CharField(max_length=10, choices=[('Donor', 'Donor'), ('Patient', 'Patient')])
-    datetime_of_appointment = models.DateTimeField()
-    datetime_of_booking = models.DateTimeField(auto_now_add=True)
+    datetime_of_appointment = models.DateField()
+    datetime_of_booking = models.DateField(auto_now_add=True)
     appointment_fullfilled = models.BooleanField(default=False) #type: ignore
     models.UniqueConstraint(fields=['user_id', 'clinic_id', 'datetime_of_appointment'], name='unique_user_clinic_datetime')
 

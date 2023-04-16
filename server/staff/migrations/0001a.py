@@ -4,14 +4,14 @@ SQL_QUERIES = """
 create trigger bloodavailable_insert after insert on staff_clinic
 for each row
     insert into staff_bloodavailable(blood_group, units_available, clinic_id_id) values
-        ('A+', 0, new.clinic_id),
-        ('A-', 0, new.clinic_id),
-        ('B+', 0, new.clinic_id),
-        ('B-', 0, new.clinic_id),
-        ('AB+', 0, new.clinic_id),
-        ('AB-', 0, new.clinic_id),
-        ('O+', 0, new.clinic_id),
-        ('O-', 0, new.clinic_id);
+        ('A+', 5, new.clinic_id),
+        ('A-', 5, new.clinic_id),
+        ('B+', 5, new.clinic_id),
+        ('B-', 5, new.clinic_id),
+        ('AB+', 5, new.clinic_id),
+        ('AB-', 5, new.clinic_id),
+        ('O+', 5, new.clinic_id),
+        ('O-', 5, new.clinic_id);
         ;
 create trigger bloodavailable_add after insert on staff_bloodfromdonor
 for each row
@@ -47,7 +47,7 @@ def run_sql(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('staff', '0001_initial'),
+        ('staff', '0001b'),
         ('users', '0005_auto_20230415_1001')
     ]
 
