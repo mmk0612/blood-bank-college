@@ -14,7 +14,12 @@ def staff_homepage(request):
     if not request.user.is_staff:
         messages.error(request, 'You must be a staff member to view the staff homepage.')
         return render(request, 'not_allowed.html')
+
     context = {}
+    staff = Staff.objects.get(user_id=request.user)
+    blood_available = BloodAvailable.objects.filter(clinic_id=staff.clinic_id)
+    context['blood_available'] = blood_available
+
     return render(request, 'staff/homepage.html', context)
 
 

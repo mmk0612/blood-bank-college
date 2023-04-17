@@ -23,6 +23,10 @@
                     <a href="/staff/view-appointments">VIEW APPOINTMENT</a>
                   </button>
               </div>
+
+              {% for blood in blood_available %}
+                  {{ blood.blood_group }} - {{ blood.units_available }} <br>
+                {% endfor %}
             </div>
           </div>
         </div>
