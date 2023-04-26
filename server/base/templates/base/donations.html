@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Donations
+{% endblock %}
+
+{% block content %}
+
+    dontations
+
+    <img src="{% static 'images/mihir-paytm.png' %}" alt="donate" width="500" height="600">
+
+    Thanks to our patrons for their generous donations.
+
+    {% for donor in donors %}
+        <div class="donor">
+            {{ donor.user_id.first_name }} {{ donor.user_id.last_name }}
+            {{ donor.amount }}
+            {{ donor.date_of_payment }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

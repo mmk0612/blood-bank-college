@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %} Login {% endblock %} {% block content %}
+<div class="container-fluid">
+  <h1 style="margin-bottom: 20px; text-align: center">
+    <strong>User Login</strong>
+  </h1>
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row g-3">
+      <div class="mb-3 col-lg-6">
+        <label for="username" class="form-label"> Username </label>
+        {{form.username }}
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="password1" class="form-label"> Password </label>
+        {{form.password }}
+      </div>
+    </div>
+    <button
+      type="button submit"
+      class="btn btn-outline-secondary btn-lg"
+      style="padding: 5px 20px"
+    >
+      Login
+    </button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,241 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Home {% endblock%}
+{% block content %}
+
+<section id="main-blood">
+  <div id="videoDiv">
+    <video id="video1" preload="" autoplay="" muted="" playsinline="" loop="">
+      <source
+        src="{% static 'images/RedBloodCellsVideo-compressed.mp4' %}"
+        type="video/mp4"
+      />
+    </video>
+    <div id="videoMessage" class="styling">
+      <div class="d-grid gap-2">
+        <button class="btn btn-outline-danger btn-lg" type="button" style="padding:15px 50px 5px;">
+            <a href="/create-appointment" class="bl-text">
+              <div style="display:flex; flex-direction: row;">
+                <i class="fa-solid fa-droplet"></i><p style="padding-left: 5px;">Request Blood</p>
+              </div>
+            </a>
+        </button>
+        <button class="btn btn-outline-danger btn-lg" type="button" style="padding:15px 50px 5px;">
+          <a href="/create-appointment" class="bl-text">
+            <div style="display:flex; flex-direction: row;">
+              <i class="fa-solid fa-droplet"></i><p style="padding-left: 5px;">Donate Blood</p>
+            </div>
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="features">
+  <div style="background-image: url('static/images/cardbg.jpeg'); background-size:cover;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card opacity-75">
+            <div class="card-header">
+              <h2>DONATIONS</h2>
+            </div>
+            <div class="card-body">
+              <p><i class="fa-solid fa-indian-rupee-sign fa-4x"></i></p>
+              <p>
+                Thank you for all your donations towards our mission and becoming an important part of our team.
+              </p>
+            </div> 
+            <div class="card-footer">
+                <button type="button" class="btn btn-danger">
+                  <a href="/donations">DONATE US</a>
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card opacity-75">
+            <div class="card-header">
+              <h2>DONORS</h2>
+            </div>
+            <div class="card-body">
+              <p><i class="fa-solid fa-handshake-angle fa-4x"></i></p>
+              <p>
+                Thank you all for donating your blood and saving lives through your precious blood .Every blood donor is a hero!
+              </p>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-danger">
+                  <a href="/volunteer">DONOR INFO</a>
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card opacity-75">
+            <div class="card-header">
+              <h2>EVENTS</h2>
+            </div>
+            <div class="card-body">
+              <p><i class="fa-regular fa-flag fa-4x"></i></p>
+              <p>
+                We are planning our important future events for all of you. Please
+                check all the related information to join!
+              </p>
+              </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-danger">
+                <a href="/events">EVENTS INFO</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section id="articles">
+  <div
+    id="Articlescarousel"
+    class="carousel slide container-fluid"
+    data-ride="carousel"
+    data-interval="1000"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="wrapper five">
+          <span class="float-box">
+            <h2 class="float article-text">Why should we donate blood?</h2>
+          </span>
+        </div>
+        <img
+          class="article-img"
+          src="{% static 'images/whydonate.jpg' %}"
+          alt="blood-importance"
+        />
+        <p class="flicker">
+          Blood is the most precious gift that anyone can give to another person
+          – the gift of life. A decision to donate your blood can save a life,
+          or even several if your blood is separated into its components – red
+          cells, platelets and plasma – which can be used individually for
+          patients with specific conditions.Safe blood saves lives. Blood is
+          needed by women with complications during pregnancy and childbirth,
+          children with severe anaemia, often resulting from malaria or
+          malnutrition, accident victims and surgical and cancer patients.
+        </p>
+      </div>
+      <div class="carousel-item">
+        <div class="wrapper five">
+          <span class="float-box">
+            <h2 class="float article-text">Is donating blood safe?</h2>
+          </span>
+        </div>
+        <img
+          class="article-img"
+          src="{% static 'images/safe.jpeg' %}"
+          alt="Blood-donation-safe"
+        />
+          <div class="wrapper six">
+            <div>
+              <p class="flicker">
+          Yes. Remember that you will only be accepted as a blood donor if you
+          are fit and well. Your health and well-being are very important to the
+          blood service. The needle and blood bag used to collect blood come in
+          a sterile pack that cannot be reused, so the process is made as safe
+          as possible.
+              </p>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="wrapper five">
+          <span class="float-box">
+            <h2 class="float article-text" style="font-size:2.5rem;">What is the blood donation process?</h2>
+          </span>
+        </div>
+        <img
+          class="article-img"
+          src="{% static 'images/process.webp' %}"
+          alt="Blood-donation-process"
+        />
+        <div class="wrapper six">
+          <div>
+            <p class="flicker">
+          The blood donation process is simple and safe. It takes about 10-15
+          minutes to donate blood. The process includes:
+          <ul class="flicker" style="text-align: left;">
+            <li>Registration</li>
+            <li>Health history and mini-physical</li>
+            <li>Donation</li>
+            <li>Refreshments</li>
+          </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="wrapper five">
+          <span class="float-box">
+            <h2 class="float article-text">How often can I donate blood?</h2>
+          </span>
+        </div>
+        <img
+          class="article-img"
+          src="{% static 'images/often.webp' %}"
+          alt="Blood-donation-often"
+        />
+        <div class="wrapper six">
+          <div>
+            <p class="flicker">
+          You can donate blood every 56 days. You can donate platelets every 7
+          days. You can donate plasma every 28 days. You can donate double red
+          cells every 112 days. You can donate autologous blood every 56 days.
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="carousel-item">
+          <div class="wrapper five">
+            <span class="float-box">
+              <h2 class="float article-text" style="font-size: 2.5rem;">What are the benefits of donating blood?</h2>
+            </span>
+          </div>
+          <img
+            class="article-img"
+            src="{% static 'images/benefit.jpeg' %}"
+            alt="Blood-donation-benefits"
+          />
+          <div class="wrapper six">
+            <div>
+              <p class="flicker">
+                Donating blood has benefits for your emotional and physical health. According to reports the following benefits are associated with donating blood:
+                <ul class="flicker" style="text-align: left;">
+                <li>Reduce stress</li>
+                <li>Improve your emotional well-being</li>
+                <li>Benefit your physical health</li>
+                <li>Help get rid of negative feelings</li>
+                <li>Provide a sense of belonging and reduce isolation</li>
+                </ul>
+              </p>
+            </div>
+          </div> 
+        </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#Articlescarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#Articlescarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+{% endblock %}

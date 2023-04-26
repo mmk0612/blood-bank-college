@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    About Us
+{% endblock %}
+
+{% block content %}
+    <section id="about">
+      <div class="container-fluid">
+        <div class="wrapper two">
+          <div class="neon">
+            <h1><strong>OUR TEAM</strong></h1>
+          </div>
+      </div>
+        <div
+          id="Aboutcarousel"
+          class="carousel slide container-fluid"
+          data-ride="carousel"
+          data-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="wrapper ten">
+                <div>
+                    <h2 class="bounce">
+                        <span>Mihir Kumar</span>
+                    </h2>
+                </div>
+            </div>
+              <img
+                class="about-img"
+                src="{% static 'images/mmk123.jpeg' %}"
+                alt="mmk-pic"
+              />
+              <div class="wrapper six">
+                <div>
+                  <p class="flicker">
+                    Mihir is a full stack web developer and founder at BloodSourceInc
+                    taking care of the management of this website.
+                  </p>
+                  <p class="flicker">Contact No.:9643522963</p>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+              <div class="wrapper ten">
+                <div>
+                    <h2 class="bounce">
+                        <span>Monika</span>
+                    </h2>
+                </div>
+            </div>
+              <img
+                class="about-img"
+                src="{% static 'images/moni.jpg' %}"
+                alt="monika-pic"
+              />
+              <div class="wrapper six">
+                <div>
+                  <p class="flicker">
+                    Monika is a web designer at and co-founder BloodSourceInc designing
+                    key elements of our website.
+                  </p>
+                  <p class="flicker">Contact No.:9013075758</p>
+                </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#Aboutcarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#Aboutcarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
