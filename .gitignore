@@ -8,3 +8,8 @@ server/database-options.conf
 
 **/.env
 .vscode
+
+.venv
+.vercel
+
+static

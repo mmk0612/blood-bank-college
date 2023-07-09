@@ -160,3 +160,5 @@ server/base/templates/base/create-appointment.html
 server/base/templates/base/already-appointment.html
 server/base/templates/base/about-us.html
 
+
+test
