@@ -7,18 +7,38 @@
 
 {% block content %}
 
-    dontations
-
-    <img src="{% static 'images/mihir-paytm.png' %}" alt="donate" width="500" height="600">
-
-    Thanks to our patrons for their generous donations.
-
-    {% for donor in donors %}
-        <div class="donor">
-            {{ donor.user_id.first_name }} {{ donor.user_id.last_name }}
-            {{ donor.amount }}
-            {{ donor.date_of_payment }}
+<section id="donations">
+    <div style="background-image:url('/static/images/donations.jpeg'); background-size:cover; background-position-x: center;">
+        <div class="container-fluid" style="text-align: center;">
+            <h1 style="margin-bottom: 30px; font-weight: bold;">DONATIONS</h1>
+            <img src="{% static 'images/mihir-paytm.png' %}" alt="donate" width="200px" height="200px" style="margin-bottom: 30px;">
+            <h3 style="margin-bottom:30px;">SCAN TO DONATE</h3>
+            <hr>
+            <h4 style="font-family: 'Merienda', sans-serif; margin-top: 40px;">Thanks to our patrons for their generous donations.</h2>
+            <div class="donor">
+                    <table class="table table-striped" style="margin:50px 0 150px 0; backdrop-filter: blur(5px);">
+                        <thead>
+                        <tr>
+                            <th scope="col">First-Name</th>
+                            <th scope="col">Last-Name</th>
+                            <th scope="col">Funds Donated(₹)</th>
+                            <th scope="col">Date Donated</th>
+                        </tr>
+                        </thead>
+                        {% for donor in donors %}
+                        <tbody>
+                        <tr>
+                            <td style="font-weight: bold;">{{ donor.user_id.first_name }}</td>
+                            <td style="font-weight: bold;">{{ donor.user_id.last_name }}</td>
+                            <td style="font-weight: bold;">{{ donor.amount }}</td>
+                            <td style="font-weight: bold;">{{ donor.date_of_payment }}</td>
+                        </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+            </div>
         </div>
-    {% endfor %}
-
+    </div>
+</section>
 {% endblock %}
+
