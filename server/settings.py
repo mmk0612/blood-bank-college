@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'server.wsgi.application'
+WSGI_APPLICATION = 'server.wsgi.app'
 
 
 # Database
@@ -86,12 +86,14 @@ import os
 
 dotenv.load_dotenv()
 
-BLOODBANK_DATABASE_NAME = os.getenv("BLOODBANK_DATABASE_NAME")
-BLOODBANK_DATABASE_USER = os.getenv("BLOODBANK_DATABASE_USER")
-BLOODBANK_DATABASE_PASS = os.getenv("BLOODBANK_DATABASE_PASS")
-BLOODBANK_DATABASE_HOST = os.getenv("BLOODBANK_DATABASE_HOST")
+BLOODBANK_DATABASE_NAME = os.getenv("BLOODSOURCE_DB")
+BLOODBANK_DATABASE_USER = os.getenv("BLOODSOURCE_USER")
+BLOODBANK_DATABASE_PASS = os.getenv("BLOODSOURCE_PASS")
+BLOODBANK_DATABASE_HOST = os.getenv("BLOODSOURCE_HOST")
+BLOODBANK_DATABASE_PORT = os.getenv("BLOODSOURCE_PORT")
 
-
+import pymysql
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
@@ -100,6 +102,7 @@ DATABASES = {
         'USER': BLOODBANK_DATABASE_USER,
         'PASSWORD': BLOODBANK_DATABASE_PASS,
         'HOST': BLOODBANK_DATABASE_HOST,
+        'PORT': BLOODBANK_DATABASE_PORT,
     }
 }
 
@@ -139,7 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOL = "static/"
+STATIC_ROOT = "dist/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

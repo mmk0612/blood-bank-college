@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Recent Donors
+{% endblock %}
+
+{% block content %}
+<div style="background-image:url('/static/images/recentdonors.png'); background-size:cover;">
+    <div class="container-fluid" style="backdrop-filter: blur(5px);">
+    <h1 style="text-align: center; margin-bottom: 40px;"><strong>RECENT BLOOD DONORS</strong></h1>
+
+    <h4 style="font-family: 'Merienda', sans-serif; text-align: center; margin-bottom:50px;">Congratulations on becoming a life saver.</h4>
+        <div>
+            <table class="table" style="text-align:center; margin:100px 0 150px 0;">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Blood Group</th>
+                        <th scope="col">Date Blood Donated</th>
+                    </tr>
+                </thead>
+                {% for donor in recent_donors %}
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">{{ donor.name }}</td>
+                        <td style="font-weight: bold;">{{ donor.state }}</td>
+                        <td style="font-weight: bold;">{{ donor.blood_donated }}</td>
+                        <td style="font-weight: bold;">{{ donor.datetime_of_appointment }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>  
+{% endblock %}
+
